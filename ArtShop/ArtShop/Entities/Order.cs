@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ArtShop.Entities
 {
-    public class Purchase
+    public class Order
     {
         public int Id { get; set; }
         public int ClientId { get; set; }

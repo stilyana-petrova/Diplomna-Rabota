@@ -8,6 +8,10 @@ namespace ArtShop.Entities
 {
     public class Client
     {
+        public Client()
+        {
+            this.Orders = new HashSet<Order>();
+        }
         public int Id { get; set; }
 
         [Required]
@@ -26,5 +30,7 @@ namespace ArtShop.Entities
 
         [Required]
         public string Address { get; set; }
+        public ICollection<Order> Orders { get; set; }
+
     }
 }
