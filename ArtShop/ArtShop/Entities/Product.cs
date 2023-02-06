@@ -8,10 +8,7 @@ namespace ArtShop.Entities
 {
     public class Product
     {
-        public Product()
-        {
-            this.Orders = new HashSet<Order>();
-        }
+
         public int Id { get; set; }
 
         [Required]
@@ -19,12 +16,12 @@ namespace ArtShop.Entities
 
         [Required]
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
 
         [Required]
         public int DesignerId { get; set; }
-        public Designer Designer { get; set; }
+        public virtual Designer Designer { get; set; }
 
 
         [Required]
@@ -37,10 +34,12 @@ namespace ArtShop.Entities
         public decimal Price { get; set; }
 
         [Required]
+        [Range(0, 100)]
         public int Quantity { get; set; }
 
-        public int Discount { get; set; }
+        public decimal Discount { get; set; }
 
-        public ICollection<Order> Orders { get; set; }
+        public virtual IEnumerable<Order> Orders { get; set; } = new List<Order>();
     }
+
 }

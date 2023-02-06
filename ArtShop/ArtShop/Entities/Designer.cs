@@ -11,6 +11,8 @@ namespace ArtShop.Entities
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string DesignerName { get; set; }
+
+        public virtual IEnumerable<Product> Products { get; set; } = new List<Product>();
     }
 }
