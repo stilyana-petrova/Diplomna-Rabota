@@ -12,6 +12,8 @@ namespace ArtShop.Entities
         public int Id { get; set; }
 
         [Required]
+        [MaxLength(160)]
+        [MinLength(10)]
         public string Name { get; set; }
 
         [Required]
@@ -31,6 +33,8 @@ namespace ArtShop.Entities
         public string Photo { get; set; }
 
         [Required]
+        [Range(1, 300, ErrorMessage = "Price must be positive in range 0-100.")]
+        [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
         [Required]
