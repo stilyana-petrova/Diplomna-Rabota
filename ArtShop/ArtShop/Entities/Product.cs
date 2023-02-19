@@ -33,12 +33,12 @@ namespace ArtShop.Entities
         public string Photo { get; set; }
 
         [Required]
-        [Range(1, 300, ErrorMessage = "Price must be positive in range 0-100.")]
+        [Range(1, 300, ErrorMessage = "Price must be positive in range 1-300.")]
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
         [Required]
-        [Range(0, 100)]
+        [Range(0, 100, ErrorMessage = "Price must be positive in range 0-100.")]
         public int Quantity { get; set; }
 
         public decimal Discount { get; set; }
