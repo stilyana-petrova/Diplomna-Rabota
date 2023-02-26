@@ -50,6 +50,8 @@ namespace ArtShop
 
             services.AddControllersWithViews();
 
+            services.AddTransient<IProductService, ProductService>();
+
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IDesignerService, DesignerService>();
 

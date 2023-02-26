@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ArtShop.Models.Product;
 
 namespace ArtShop.Data
 {
@@ -18,5 +19,10 @@ namespace ArtShop.Data
         public DbSet<Designer> Designers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<ArtShop.Models.Product.ProductCreateVM> ProductCreateVM { get; set; }
+        public DbSet<ArtShop.Models.Product.ProductIndexVM> ProductIndexVM { get; set; }
+        public DbSet<ArtShop.Models.Product.ProductEditVM> ProductEditVM { get; set; }
+        public DbSet<ArtShop.Models.Product.ProductDetailsVM> ProductDetailsVM { get; set; }
+        public DbSet<ArtShop.Models.Product.ProductDeleteVM> ProductDeleteVM { get; set; }
     }
 }
