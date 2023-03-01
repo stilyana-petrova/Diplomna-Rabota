@@ -85,7 +85,7 @@ namespace ArtShop.Infrastructure
             }
             dataDesigner.Designers.AddRange(new[]
             {
-                new Designer {DesignerName="ArtShop"},
+                new Designer {DesignerName="Art Shop"},
                 new Designer {DesignerName="Martis Craft"}
             });
             dataDesigner.SaveChanges();

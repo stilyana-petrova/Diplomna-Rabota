@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using ArtShop.Models.Product;
+using ArtShop.Models.Order;
 
 namespace ArtShop.Data
 {
@@ -24,5 +25,7 @@ namespace ArtShop.Data
         public DbSet<ArtShop.Models.Product.ProductEditVM> ProductEditVM { get; set; }
         public DbSet<ArtShop.Models.Product.ProductDetailsVM> ProductDetailsVM { get; set; }
         public DbSet<ArtShop.Models.Product.ProductDeleteVM> ProductDeleteVM { get; set; }
+        public DbSet<ArtShop.Models.Order.OrderConfirmVM> OrderConfirmVM { get; set; }
+        public DbSet<ArtShop.Models.Order.OrderIndexVM> OrderIndexVM { get; set; }
     }
 }
