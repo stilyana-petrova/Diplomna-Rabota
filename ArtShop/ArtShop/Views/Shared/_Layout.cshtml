@@ -27,9 +27,28 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="MyOrders">My Orders</a>
+                        <li class="nav-item active">
+                            <div class="dropdown show">
+                                <a class="nav-link active dropdown-toggle" href="#"
+                                   id="dropdownMenuLink" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                     Categories
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkCategories">
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=decoration&SearchStringDesignerName=">Decorations</a>
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=paintings&SearchStringDesignerName=">Paintings</a>
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=scandinavian+moss&SearchStringDesignerName=">Scandinavian Moss</a>
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=key+house&SearchStringDesignerName=">Key houses</a>
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=calendar&SearchStringDesignerName=">Calendars</a>
+                                </div>
+                            </div>
                         </li>
+                        @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Client")))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="MyOrders">My Orders</a>
+                            </li>
+                        }
 
                         @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                         {
