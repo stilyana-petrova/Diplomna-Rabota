@@ -55,6 +55,8 @@ namespace ArtShop
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IDesignerService, DesignerService>();
 
+            services.AddTransient<IStatisticsService, StatisticsService>();
+
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
