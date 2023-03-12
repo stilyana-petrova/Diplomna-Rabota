@@ -13,7 +13,7 @@ namespace ArtShop.Entities
 
         [Required]
         [MaxLength(160)]
-        [MinLength(10)]
+        [MinLength(3)]
         public string Name { get; set; }
 
         [Required]

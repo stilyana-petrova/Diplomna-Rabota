@@ -74,7 +74,9 @@ namespace ArtShop.Infrastructure
                 new Category {CategoryName= "Scandinavian Moss"},
                 new Category {CategoryName="Key House"},
                 new Category {CategoryName="Decoration"},
-                new Category {CategoryName="Calendar"}
+                new Category {CategoryName="Calendar"},
+                new Category {CategoryName="Albums"},
+                new Category {CategoryName="Cards"}
             });
             dataCategory.SaveChanges();
         }

@@ -176,14 +176,16 @@ namespace ArtShop.Controllers
                 Id = item.Id,
                 Name = item.Name,
                 CategoryId = item.CategoryId,
+                CategoryName=item.Category.CategoryName,
                 DesignerId = item.DesignerId,
+                DesignerName=item.Designer.DesignerName,
                 Description = item.Description,
                 Photo = item.Photo,
                 Price = item.Price,
                 Quantity = item.Quantity,
                 Discount = item.Discount
             };
-            return View();
+            return View(product);
         }
 
         // POST: ProductController/Delete/5
@@ -194,7 +196,7 @@ namespace ArtShop.Controllers
             var deleted = _productService.RemoveById(id);
             if (deleted)
             {
-                return this.RedirectToAction("Success");
+                return this.RedirectToAction(nameof(Index));
             }
             else
             {

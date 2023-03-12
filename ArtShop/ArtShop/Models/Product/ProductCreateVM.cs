@@ -20,7 +20,7 @@ namespace ArtShop.Models.Product
 
         [Required]
         [MaxLength(160)]
-        [MinLength(10)]
+        [MinLength(3)]
         [Display(Name="Product Name")]
         public string Name { get; set; }
 
