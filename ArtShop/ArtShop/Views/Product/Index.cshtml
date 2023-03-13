@@ -5,6 +5,7 @@
     ViewData["Title"] = "Index";
 }
 
+
 <h1>Index</h1>
 @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
 {
@@ -29,14 +30,14 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             @*<th>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </th>*@
+                    @Html.DisplayNameFor(model => model.CategoryId)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.CategoryName)
             </th>
             @*<th>
-            @Html.DisplayNameFor(model => model.DesignerId)
-        </th>*@
+                    @Html.DisplayNameFor(model => model.DesignerId)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.DesignerName)
             </th>
@@ -86,7 +87,7 @@
                 </td>
                 <td>
 
-                    <img src="@Html.DisplayFor(modelItem => item.Photo)" alt="Photo" width="100" />
+                    <img src="@Html.DisplayFor(modelItem => item.Photo)" alt="Photo" width="100" class="img-fluid" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)
@@ -101,21 +102,21 @@
                 {
                     <td>
                         @await Html.PartialAsync("_OrderPartialView", new OrderConfirmVM
-                        { 
-                        ProductId=item.Id
+                        {
+                        ProductId = item.Id
                         })
                     </td>
                 }
                 <td>
                     @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                     {
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> @:|
+                        <a asp-action="Edit" asp-route-id="@item.Id"><img src="~/images/edit.png" width="25"></a> 
                     }
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                    <a asp-action="Details" asp-route-id="@item.Id"><img src="~/images/details.svg" width="25" /></a>
                     @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                     {
-                      @:|  
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        
+                        <a asp-action="Delete" asp-route-id="@item.Id"><img src="~/images/delete.svg" width="25"/></a>
                     }
                 </td>
             </tr>
