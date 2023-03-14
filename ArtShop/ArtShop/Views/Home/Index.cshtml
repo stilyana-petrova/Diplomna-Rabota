@@ -2,16 +2,83 @@
     ViewData["Title"] = "Home Page";
 }
 
-
 <style>
     #categ {
-        background-color: #e7d8c9;
+        background-color: #ffe0be;
     }
 
+    .paddingTB60 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
     #about {
         background-color: #cfa26f;
     }
+    .image-aboutus-banner {
+        background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/4464919/pexels-photo-4464919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        color: #fff;
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    .image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+        .image img {
+            width: 100%;
+            height: 300px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .image:hover img {
+            transform: scale(2,2);
+            cursor: pointer;
+        }
+
+    #contact2 {
+        letter-spacing: 3px;
+    }
+
+
+    .social-icons {
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+    }
+
+    .social {
+        margin: 7px 7px 7px 0px;
+    }
+
+    .img {
+        position: relative;
+        width: 360px; /* can be omitted for a regular non-lazy image */
+        max-width: 100%;
+    }
+
+        .img img.images.hover {
+            position: absolute;
+            margin-top:0px;
+            top:0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+
+        .img:hover img.images.hover {
+            opacity: 1;
+        }
 </style>
+
 <!--Slideshow-->
 <div class="mt-5 pb-5">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3500">
@@ -61,29 +128,43 @@
     <div class="row justify-content-around mt-5">
         <div class="d-flex mb-5" data-aos="zoom-in" data-aos-delay="300">
             <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
-                <img class="" src="/images/Done/decorations/dec-1-resize.jpg" width="313" />
+                <div class="image">
+                    <a href="/Product/Index?SearchStringCategoryName=decoration&SearchStringDesignerName="><img src="/images/Done/decorations/dec-1-resize.jpg" /></a>
+                </div>
                 <h4><a href="/Product/Index?SearchStringCategoryName=decoration&SearchStringDesignerName=">Decorations</a></h4>
             </div>
         </div>
 
         <div class="d-flex mb-5" data-aos="zoom-in" data-aos-delay="300">
             <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
-                <img src="/images/Done/paintings/paint-6.jpg" width="300" />
+                <div class="image">
+                    <a href="/Product/Index?SearchStringCategoryName=paintings&SearchStringDesignerName=">
+                        <img src="/images/Done/paintings/paint-6.jpg"  />
+                    </a>
+                </div>
                 <h4><a href="/Product/Index?SearchStringCategoryName=paintings&SearchStringDesignerName=">Paintings</a></h4>
             </div>
         </div>
 
         <div class="d-flex mb-5" data-aos="zoom-in" data-aos-delay="300">
             <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
-                <img src="/images/Done/calendars/cal-1.jpg" width="325" />
+                <div class="image">
+                    <a href="/Product/Index?SearchStringCategoryName=calendar&SearchStringDesignerName=">
+                        <img src="/images/Done/calendars/cal-1.jpg" />
+                    </a>
+                </div>
                 <h4><a href="/Product/Index?SearchStringCategoryName=calendar&SearchStringDesignerName=">Calendars</a></h4>
             </div>
         </div>
 
         <div class="d-flex mb-5" data-aos="zoom-in" data-aos-delay="300">
             <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
-                <img src="/images/Done/keyhouse/key-2.jpg" width="342" />
-                <h4><a href="/Product/Index?SearchStringCategoryName=key+house&SearchStringDesignerName=">Key house</a></h4>
+                <div class="image">
+                    <a href="/Product/Index?SearchStringCategoryName=key+house&SearchStringDesignerName=">
+                        <img src="/images/Done/keyhouse/key-2.jpg"  />
+                    </a>
+                </div>
+                <h4><a href="/Product/Index?SearchStringCategoryName=key+house&SearchStringDesignerName=">Key houses</a></h4>
             </div>
         </div>
 
@@ -91,20 +172,74 @@
 </div>
 
 
-<!--About Us Page-->
-<div id="about" class="pt-5">
-    <div class="container-fluid pt-5 pb-5">
+<!--ABOUT US-->
 
+<div class="image-aboutus-banner" style="margin-top:70px" id="aboutus">
+    <div class="container">
         <div class="row">
-            <div class="col">
-                <img src="~/images/cover-1.jpg" alt="Image" width="300" class="rounded-circle img-fluid"/>
+            <div class="col-md-12">
+                <h1 class="h1">About Us</h1>
             </div>
-            <div class="col">
-                <h1 class="h1 mb-5">About Us</h1>
-                <p>Information</p>
-            </div>
-            <div class="w-100"></div>
-
         </div>
     </div>
 </div>
+
+<div class="paddingTB60" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="strong">Who we are and<br>what we do?</h1>
+                <p class="lead">Meet our creativity</p>
+            </div>
+            <div class="col-md-6">
+                <p>We are Art Shop.</p>
+                <p>We have selected our most creative and unique ideas on our website.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--CONTACTS-->
+<div id="contacts">
+
+    <div class="container pt-5 pb-5">
+        <h1 class="text-center">Contacts</h1>
+        <hr>
+        <div class="row">
+            <div class="col-sm-8">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.550632172056!2d23.03071431546415!3d42.607276779171116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aacac3bbc30045%3A0x1282864432d70ccb!2z0J_QnNCTICLQpdGA0LjRgdGC0L4g0KHQvNC40YDQvdC10L3RgdC60Lgi!5e0!3m2!1sbg!2sbg!4v1678790345998!5m2!1sbg!2sbg" class="h-100 w-100" style="border:0;" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <!--ICONS-->
+            <div class="col-sm-4 mt-5 mb-5" id="contact2">
+                <div class="row mb-3 img">
+                    <img src="~/images/email.png" id="img-hover" class="images main" width="30" />
+                    <a href="#"><img src="~/images/email-color.png" width="30" class="social images hover" />stilyanapetrova&commat;gmail.com</a>
+                </div>
+                <div class="row mb-3 img">
+                    <img src="~/images/phone.png" id="img-hover" class="images main" width="30" />
+                    <a href="#"><img src="~/images/phone-color.png" width="30" class="social images hover" />(+359) 899 999 999</a>
+                </div>
+                <div class="row mb-3 img">
+                    <img src="~/images/facebook.svg" id="img-hover" class="images main" width="30" />
+                    <a href="https://www.facebook.com/profile.php?id=100087055988455"><img src="~/images/facebook-color.png" width="30" class="social images hover" />Art Shop</a>
+                </div>
+                <div class="row mb-3 img">
+                    <img src="~/images/website.png" id="img-hover" class="images main" width="34" />
+                    <a href="#"><img src="~/images/website-color.png" width="30" class="social images hover" style="width:34px"/>Art Shop</a>
+                </div>
+                <div class="row mb-3 img">
+                    <img src="~/images/pinterest-black.png" id="img-hover" class="images main" width="30" />
+                    <a href="https://www.pinterest.com/artshop0/"><img src="~/images/pinterest.png" width="30" class="social images hover" />Art Shop</a>
+
+                </div>
+                <div class="row mb-3 img">
+                    <img src="~/images/github.png" id="img-hover" class="images main" width="30" />
+                    <a href="https://github.com/stilyana-petrova"><img src="~/images/github-color.png" width="30" class="social images hover" />GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
